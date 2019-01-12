@@ -28,15 +28,17 @@ node:
         mode:
         vlans:
     routing:
-      lo: 
+      lo: 10.11.11.11/32
       ospf:
         area:
         neighbors:
       bgp:
-        asn:
+        asn: 65111
         underlay:
           external:
             peers:
+              - swp11
+              - swp12
           internal:
             peers:
       svi:
@@ -75,15 +77,17 @@ node:
         mode:
         vlans:
     routing:
-      lo:
+      lo: 10.22.22.22/32
       ospf:
         area:
         neighbors:
       bgp:
-        asn:
+        asn: 65222
         underlay:
           external:
             peers:
+              - swp21
+              - swp22
           internal:
             peers:
       svi:
@@ -122,15 +126,17 @@ node:
         mode:
         vlans:
     routing:
-      lo:
+      lo: 10.33.33.33/32
       ospf:
         area:
         neighbors:
       bgp:
-        asn:
+        asn: 65333
         underlay:
           external:
             peers:
+              - swp31
+              - swp32
           internal:
             peers:
       svi:
