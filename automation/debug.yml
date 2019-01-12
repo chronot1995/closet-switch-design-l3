@@ -4,7 +4,7 @@
 
   tasks:
    - debug:
-       msg: "{{ node["wan-rtr"]["routing"]["bgp"]["underlay"]["external"]["peers"] }}"
+       msg: "{{ node[inventory_hostname].routing.bgp.underlay.external.peers }}"
 
 #   - debug:
 #       msg: "{{ node[inventory_hostname].routing.ospf.neighbors }}"
