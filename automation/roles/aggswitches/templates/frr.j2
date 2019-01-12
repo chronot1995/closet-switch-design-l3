@@ -15,3 +15,13 @@ interface {{interface}}
 !
 {% endfor %}
 {% endif %}
+!
+{% if node[inventory_hostname].routing.bgp.underlay.external.peers is not none %}
+{% for interface in node[inventory_hostname]["routing"]["bgp"]["underlay"]["external"]["peers"] -%}
+interface {{interface}}
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+{% endfor %}
+{% endif %}
+!
