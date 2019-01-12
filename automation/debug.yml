@@ -1,10 +1,10 @@
 - name: Simple Debug Script
-  hosts: all
+  hosts: wan-rtr
   gather_facts: yes
 
   tasks:
    - debug:
-       msg: "{{ node[inventory_hostname] }}"
+       msg: "{{ node[wan-rtr]["routing"]["bgp"]["underlay"]["external"]["peers"] }}"
 
 #   - debug:
 #       msg: "{{ node[inventory_hostname].routing.ospf.neighbors }}"
