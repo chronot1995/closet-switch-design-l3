@@ -7,7 +7,7 @@ service integrated-vtysh-config
 !
 log syslog informational
 !
-{% if node[inventory_hostname]["routing"]["bgp"]["underlay"]["external"]["peers"]|length %}
+{% if node[inventory_hostname]["routing"]["bgp"]["underlay"]["external"].peers is defined %}
 {% for interface in node[inventory_hostname]["routing"]["bgp"]["underlay"]["external"]["peers"] -%}
 interface {{interface}}
  ipv6 nd ra-interval 10
@@ -16,7 +16,7 @@ interface {{interface}}
 {% endfor %}
 {% endif %}
 !
-{% if node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"]["peers"]|length %}
+{% if node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"].peers is defined %}
 {% for interface in node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"]["peers"] -%}
 interface {{interface}}
  ipv6 nd ra-interval 10
