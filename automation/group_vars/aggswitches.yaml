@@ -90,14 +90,14 @@ node:
         underlay:
           external:
             peers:
-              - swp1
-              - swp2
               - swp11
               - swp22
               - swp33
               - swp40
           internal:
             peers:
+              - swp1
+              - swp2
       svi:
         vlansvi:
           ip:
@@ -147,14 +147,14 @@ node:
         underlay:
           external:
             peers:
-              - swp1
-              - swp2
               - swp11
               - swp22
               - swp33
               - swp40
           internal:
             peers:
+              - swp1
+              - swp2
       svi:
         vlansvi:
           ip:
