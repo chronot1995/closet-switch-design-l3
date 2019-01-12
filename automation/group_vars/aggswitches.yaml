@@ -72,6 +72,7 @@ node:
       - swp11
       - swp22
       - swp33
+      - swp40
     lacp:
       interfaces:
         members:
@@ -94,6 +95,7 @@ node:
               - swp11
               - swp22
               - swp33
+              - swp40
           internal:
             peers:
       svi:
@@ -127,6 +129,7 @@ node:
       - swp11
       - swp22
       - swp33
+      - swp40
     lacp:
       interfaces:
         members:
@@ -149,6 +152,7 @@ node:
               - swp11
               - swp22
               - swp33
+              - swp40
           internal:
             peers:
       svi:
