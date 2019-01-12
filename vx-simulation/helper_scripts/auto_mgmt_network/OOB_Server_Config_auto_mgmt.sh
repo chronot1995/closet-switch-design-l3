@@ -21,7 +21,7 @@ REPONAME="closet-switch-design-l3"
 #Install Automation Tools
 puppet=0
 ansible=1
-ansible_version=2.3.1.0
+ansible_version=2.7.5
 
 #######################
 
@@ -209,6 +209,10 @@ cat <<EOT >> /home/cumulus/.gitconfig
 [core]
     editor = vim
 EOT
+
+echo "### Adding .bash_profile to auto login as cumulus user"
+echo "sudo su - cumulus" >> /home/vagrant/.bash_profile
+echo "exit" >> /home/vagrant/.bash_profile
 
 echo "############################################"
 echo "      DONE!"
