@@ -86,7 +86,7 @@ node:
         area:
         neighbors:
       bgp:
-        asn: 65111
+        asn: 65000
         underlay:
           external:
             peers:
@@ -143,7 +143,7 @@ node:
         area:
         neighbors:
       bgp:
-        asn: 65111
+        asn: 65000
         underlay:
           external:
             peers:
