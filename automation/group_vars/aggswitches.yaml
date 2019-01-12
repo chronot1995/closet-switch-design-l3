@@ -28,7 +28,7 @@ node:
         mode:
         vlans:
     routing:
-      lo: 10.10.10.10/32
+      lo: 10.44.44.44/32
       ospf:
         area:
         neighbors:
