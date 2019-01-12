@@ -16,7 +16,7 @@ interface {{interface}}
 {% endfor %}
 {% endif %}
 !
-{% if node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"].peers is defined %}
+{% if node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"].peers != "" %}
 {% for interface in node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"]["peers"] -%}
 interface {{interface}}
  ipv6 nd ra-interval 10
