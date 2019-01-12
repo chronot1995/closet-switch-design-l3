@@ -1,5 +1,5 @@
 #####
-# Host config for begin-training-bgp-j2-with-netq
+# Host config for closet-switch-design-l3
 #####
 
 - hosts: aggswitches
@@ -7,7 +7,7 @@
   roles:
   - aggswitches
 
-- hosts: aggswitches
+- hosts: closetswitches
   become: true
   roles:
   - closetswitches

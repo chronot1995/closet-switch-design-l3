@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook closet-switch-design-l2.yml
+ansible-playbook closet-switch-design-l3.yml
