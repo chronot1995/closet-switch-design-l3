@@ -44,11 +44,11 @@ install_puppet(){
 }
 
 install_ansible(){
-    echo " ### Installing Ansible... ###"
-    apt-get install -qy ansible sshpass libssh-dev python-dev libssl-dev libffi-dev
-    pip install pip --upgrade
-    pip install setuptools --upgrade
-    pip install ansible==$ansible_version --upgrade
+	echo " ### Installing Ansible... ###"
+	apt-get install -qy ansible sshpass libssh-dev python-dev libssl-dev libffi-dev
+	sudo pip install pip --upgrade
+	sudo pip install setuptools --upgrade
+	sudo pip install ansible==$ansible_version --upgrade
 }
 
 ## MOTD
