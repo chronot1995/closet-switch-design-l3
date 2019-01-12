@@ -1,0 +1,113 @@
+node:
+  agg-switch01:
+    mlag:
+      address: 169.254.1.1/30
+      backupip: 192.168.200.2
+      members:
+        - swp1
+        - swp2
+      peerip: 169.254.1.2
+      sysmac: "44:38:39:FF:01:56"
+      priority: 100
+      interfaces:
+        bond01:
+          clagid: "1"
+          members: swp1
+          mode: access
+          vlans: "100"
+    overlay:
+      anycast-ip:
+      vxlan:
+        vni:
+          vlan:
+    ports:
+      - swp1
+      - swp2
+      - swp11
+      - swp22
+      - swp33
+      - swp40
+    lacp:
+      interfaces:
+        members:
+    switching:
+      interface:
+        mode:
+        vlans:
+    routing:
+      lo: 10.1.1.1/32
+      ospf:
+        area:
+        neighbors:
+      bgp:
+        asn: 65111
+        underlay:
+          external:
+            peers:
+              - swp1
+              - swp2
+          internal:
+            peers:
+      svi:
+        vlan100:
+          ip: 172.16.121.2/24
+          vlan: 100
+          vrrp:
+            mac: "44:38:39:FF:00:01"
+            ip: 172.16.121.1/24
+  agg-switch02:
+    mlag:
+      address: 169.254.1.2/30
+      backupip: 192.168.200.1
+      members:
+        - swp1
+        - swp2
+      peerip: 169.254.1.1
+      sysmac: "44:38:39:FF:01:56"
+      priority: 100
+      interfaces:
+        bond01:
+          clagid: "1"
+          members: swp1
+          mode: access
+          vlans: "100"
+    overlay:
+      anycast-ip:
+      vxlan:
+        vni:
+          vlan:
+    ports:
+      - swp1
+      - swp2
+      - swp11
+      - swp22
+      - swp33
+      - swp40
+    lacp:
+      interfaces:
+        members:
+    switching:
+      interface:
+        mode:
+        vlans:
+    routing:
+      lo: 10.2.2.2/32
+      ospf:
+        area:
+        neighbors:
+      bgp:
+        asn: 65222
+        underlay:
+          external:
+            peers:
+              - swp1
+              - swp2
+          internal:
+            peers:
+      svi:
+        vlansvi:
+          ip:
+          vlan:
+          vrrp:
+            mac:
+            ip:

@@ -1,0 +1,13 @@
+#####
+# Host config for begin-training-bgp-j2-with-netq
+#####
+
+- hosts: aggswitches
+  become: true
+  roles:
+  - aggswitches
+
+- hosts: aggswitches
+  become: true
+  roles:
+  - closetswitches
