@@ -5,6 +5,9 @@ graph training {
  "closet-switch01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.2" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="192.168.200.11"]
  "closet-switch02" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.2" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="192.168.200.12"]
  "closet-switch03" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.2" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="192.168.200.13"]
+ "closet-fake1" [function="fake"]
+ "closet-fake2" [function="fake"]
+ "closet-fake3" [function="fake"]
 
  "wan-rtr":"swp40" -- "agg-switch01":"swp40"
  "wan-rtr":"swp41" -- "agg-switch02":"swp40"
@@ -16,5 +19,7 @@ graph training {
  "closet-switch02":"swp22" -- "agg-switch02":"swp22"
  "closet-switch03":"swp31" -- "agg-switch01":"swp33"
  "closet-switch03":"swp32" -- "agg-switch02":"swp33"
-
+ "closet-switch01":"swp7" -- "closet-fake1":"swp7"
+ "closet-switch02":"swp7" -- "closet-fake2":"swp7"
+ "closet-switch03":"swp7" -- "closet-fake3":"swp7"
  }
