@@ -19,6 +19,7 @@ router bgp {{ node[inventory_hostname]["routing"]["bgp"]["asn"] }}
  neighbor {{interface}} interface remote-as external
 {% endfor -%}
 {% endif -%}
+{% endif -%}
  !
  address-family ipv4 unicast
   redistribute connected
