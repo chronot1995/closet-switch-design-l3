@@ -1,148 +1,43 @@
 node:
   closet-switch01:
-    mlag:
-      address:
-      backup-ip:
-      members:
-      peer-ip:
-      sysmac:
-      interfaces:
-        bond01:
-          clagid:
-          members:
-          mode:
-          vlans:
-    overlay:
-      anycast-ip:
-      vxlan:
-        vni:
-          vlan:
-    ports:
-      - swp11
-      - swp12
-    lacp:
-      interfaces:
-        members:
-    switching:
-      interface:
-        mode:
-        vlans:
     routing:
-      lo: 10.11.11.11/32
-      ospf:
-        area:
-        neighbors:
+      lo: 10.1.1.1/32
       bgp:
         asn: 65111
         underlay:
           external:
             peers:
-              - swp11
-              - swp12
-          internal:
-            peers:
+              - swp47
+              - swp48
       svi:
-        vlansvi:
-          ip:
-          vlan:
-          vrrp:
-            mac:
-            ip:
+        vlan100:
+          ip: 10.11.11.1/24
+          vlan: 100
   closet-switch02:
-    mlag:
-      address:
-      backup-ip:
-      members:
-      peer-ip:
-      sysmac:
-      interfaces:
-        bond01:
-          clagid:
-          members:
-          mode:
-          vlans:
-    overlay:
-      anycast-ip:
-      vxlan:
-        vni:
-          vlan:
-    ports:
-      - swp21
-      - swp22
-    lacp:
-      interfaces:
-        members:
-    switching:
-      interface:
-        mode:
-        vlans:
     routing:
-      lo: 10.22.22.22/32
-      ospf:
-        area:
-        neighbors:
+      lo: 10.2.2.2/32
       bgp:
         asn: 65222
         underlay:
           external:
             peers:
-              - swp21
-              - swp22
-          internal:
-            peers:
+              - swp47
+              - swp48
       svi:
-        vlansvi:
-          ip:
-          vlan:
-          vrrp:
-            mac:
-            ip:
+        vlan100:
+          ip: 10.22.22.1/24
+          vlan: 100
   closet-switch03:
-    mlag:
-      address:
-      backup-ip:
-      members:
-      peer-ip:
-      sysmac:
-      interfaces:
-        bond01:
-          clagid:
-          members:
-          mode:
-          vlans:
-    overlay:
-      anycast-ip:
-      vxlan:
-        vni:
-          vlan:
-    ports:
-      - swp31
-      - swp32
-    lacp:
-      interfaces:
-        members:
-    switching:
-      interface:
-        mode:
-        vlans:
     routing:
-      lo: 10.33.33.33/32
-      ospf:
-        area:
-        neighbors:
+      lo: 10.3.3.3/32
       bgp:
         asn: 65333
         underlay:
           external:
             peers:
-              - swp31
-              - swp32
-          internal:
-            peers:
+              - swp47
+              - swp48
       svi:
-        vlansvi:
-          ip:
-          vlan:
-          vrrp:
-            mac:
-            ip:
+        vlan100:
+          ip: 10.33.33.1/24
+          vlan: 100

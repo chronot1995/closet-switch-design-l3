@@ -19,3 +19,20 @@ iface mgmt
 auto {{interface}}
 iface {{interface}}
 {% endfor %}
+
+auto bridge
+iface bridge
+    bridge-ports {{ node[inventory_hostname].switching.bridge | join(" ") }}
+{% for bridgevlans in node[inventory_hostname]["switching"]["vlans"] %}
+    bridge-vids {{ bridgevlans }}
+{% endfor %}
+    bridge-vlan-aware yes
+
+{% for vlanint in node[inventory_hostname]["routing"]["svi"] -%}
+auto {{vlanint}}
+iface {{vlanint}}
+    address {{ node[inventory_hostname]["routing"]["svi"][vlanint]["ip"] }}
+    address-virtual {{ node[inventory_hostname]["routing"]["svi"][vlanint]["vrrp"]["mac"] }} {{ node[inventory_hostname]["routing"]["svi"][vlanint]["vrrp"]["ip"] }}
+    vlan-id {{ node[inventory_hostname]["routing"]["svi"][vlanint]["vlan"] }}
+    vlan-raw-device bridge
+{% endfor %}
