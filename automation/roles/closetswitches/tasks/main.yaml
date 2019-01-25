@@ -19,3 +19,10 @@
     dest: /etc/frr/frr.conf
     backup: yes
   notify: reload frr
+
+- name: Initial Hostname setup
+  nclu:
+    commit: true
+    description: "Initial Hostname setup"
+    commands:
+      - add hostname "{{ inventory_hostname }}"
