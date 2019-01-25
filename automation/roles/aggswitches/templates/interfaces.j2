@@ -15,7 +15,16 @@ iface mgmt
   address 127.0.0.1/8
   vrf-table auto
 
-{% for interface in node[inventory_hostname]["ports"] -%}
+{% if node[inventory_hostname].routing.bgp.underlay.external.peers is not none %}
+{% for interface in node[inventory_hostname]["routing"]["bgp"]["underlay"]["external"]["peers"] %}
 auto {{interface}}
 iface {{interface}}
-{% endfor %}
+{% endfor -%}
+{% endif -%}
+
+{% if node[inventory_hostname].routing.bgp.underlay.internal.peers is not none %}
+{% for interface in node[inventory_hostname]["routing"]["bgp"]["underlay"]["internal"]["peers"] %}
+auto {{interface}}
+iface {{interface}}
+{% endfor -%}
+{% endif -%}
