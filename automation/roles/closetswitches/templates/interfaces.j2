@@ -22,8 +22,18 @@ iface {{interface}}
 {% endfor %}
 {% endif -%}
 
+{% if node[inventory_hostname].switching.interface is not none %}
 {% for interface in node[inventory_hostname]["switching"]["interface"] %}
 auto {{interface}}
 iface {{interface}}
    bridge-access {{ node[inventory_hostname]["switching"]["interface"][interface].vlan }}
+{% endfor %}
+{% endif -%}
+
+{% for vlanint in node[inventory_hostname]["routing"]["svi"] -%}
+auto {{vlanint}}
+iface {{vlanint}}
+    address {{ node[inventory_hostname]["routing"]["svi"][vlanint]["ip"] }}
+    vlan-id {{ node[inventory_hostname]["routing"]["svi"][vlanint]["vlan"] }}
+    vlan-raw-device bridge
 {% endfor %}
