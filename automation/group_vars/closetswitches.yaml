@@ -4,7 +4,7 @@ node:
       interface:
         swp7:
           mode: access
-          vlans: 100
+          vlan: 100
     routing:
       lo: 10.1.1.1/32
       bgp:
