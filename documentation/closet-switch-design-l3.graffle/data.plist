@@ -3479,7 +3479,7 @@ ASN: 65555}</string>
 		<key>Sidebar_Tab</key>
 		<integer>0</integer>
 		<key>VisibleRegion</key>
-		<string>{{-66.750000093132343, -129.12499905936428}, {1092.4999837204816, 824.99998770654224}}</string>
+		<string>{{-73.62499999068686, -129.12499905936428}, {1092.4999837204816, 824.99998770654224}}</string>
 		<key>WindowInfo_InspectorTab</key>
 		<array>
 			<string>com.omnigroup.OmniGraffle.inspectorGroup.object</string>
@@ -3517,7 +3517,7 @@ ASN: 65555}</string>
 	<key>includeNonPrintingLayersKey</key>
 	<false/>
 	<key>lastExportTypeKey</key>
-	<integer>8</integer>
+	<integer>0</integer>
 	<key>marginWidthKey</key>
 	<real>0.0</real>
 	<key>readOnlyKey</key>
