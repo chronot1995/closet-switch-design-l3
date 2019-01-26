@@ -25,5 +25,5 @@ iface {{interface}}
 {% for interface in node[inventory_hostname]["switching"]["interface"] %}
 auto {{interface}}
 iface {{interface}}
-   bridge-access {{ node[inventory_hostname]["switching"][interface].vlan }}
+   bridge-access {{ node[inventory_hostname]["switching"]["interface"][interface].vlan }}
 {% endfor %}
