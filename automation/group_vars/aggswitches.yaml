@@ -35,7 +35,7 @@ node:
         underlay:
           external:
             peers:
-              - swp11
+              - swp1
               - swp2
               - swp3
               - swp20
