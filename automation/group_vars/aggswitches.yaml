@@ -7,8 +7,8 @@ node:
         underlay:
           external:
             peers:
-              - swp20
-              - swp21
+              - swp1
+              - swp2
           internal:
             peers:
   agg-switch01:
