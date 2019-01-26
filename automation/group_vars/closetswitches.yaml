@@ -1,5 +1,10 @@
 node:
   closet-switch01:
+    switching:
+      interface:
+        swp7:
+          mode: access
+          vlans: 100
     routing:
       lo: 10.1.1.1/32
       bgp:
@@ -13,10 +18,12 @@ node:
         vlan100:
           ip: 10.11.11.1/24
           vlan: 100
-          ports:
-            - swp7
-            - swp8
   closet-switch02:
+    switching:
+      interface:
+        swp7:
+          mode: access
+          vlan: 100
     routing:
       lo: 10.2.2.2/32
       bgp:
@@ -30,10 +37,12 @@ node:
         vlan100:
           ip: 10.22.22.1/24
           vlan: 100
-          ports:
-            - swp7
-            - swp9
   closet-switch03:
+    switching:
+      interface:
+        swp7:
+          mode: access
+          vlan: 100
     routing:
       lo: 10.3.3.3/32
       bgp:
@@ -47,5 +56,3 @@ node:
         vlan100:
           ip: 10.33.33.1/24
           vlan: 100
-          ports:
-            - swp7
