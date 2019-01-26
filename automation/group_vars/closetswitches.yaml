@@ -5,6 +5,8 @@ node:
         swp7:
           mode: access
           vlan: 100
+      vlans:
+        - 100
     routing:
       lo: 10.1.1.1/32
       bgp:
@@ -24,6 +26,8 @@ node:
         swp7:
           mode: access
           vlan: 100
+      vlans:
+        - 100
     routing:
       lo: 10.2.2.2/32
       bgp:
@@ -43,6 +47,8 @@ node:
         swp7:
           mode: access
           vlan: 100
+      vlans:
+        - 100
     routing:
       lo: 10.3.3.3/32
       bgp:
