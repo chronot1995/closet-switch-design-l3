@@ -24,7 +24,7 @@ iface {{interface}}
 
 auto bridge
 iface bridge
-    bridge-ports swp7
+    bridge-ports {{ node[inventory_hostname]["switching"]["interface"] | join(" ") }}
     bridge-vids {{ node[inventory_hostname]["switching"]["vlans"] | join(" ") }}
     bridge-vlan-aware yes
 
