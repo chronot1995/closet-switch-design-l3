@@ -22,11 +22,13 @@ iface {{interface}}
 {% endfor %}
 {% endif -%}
 
+{% if node[inventory_hostname].switching.interface is not none %}
 auto bridge
 iface bridge
     bridge-ports {{ node[inventory_hostname]["switching"]["interface"] | join(" ") }}
     bridge-vids {{ node[inventory_hostname]["switching"]["vlans"] | join(" ") }}
     bridge-vlan-aware yes
+{% endif -%}
 
 {% if node[inventory_hostname].switching.interface is not none %}
 {% for interface in node[inventory_hostname]["switching"]["interface"] %}
