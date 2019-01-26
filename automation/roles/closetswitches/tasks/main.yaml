@@ -26,3 +26,22 @@
     description: "Initial Hostname setup"
     commands:
       - add hostname "{{ inventory_hostname }}"
+
+- name: Deploy VLAN and SVI configurations
+  nclu:
+    commit: true
+    description: "Deploy VLAN and SVI configurations"
+    template: |
+      add vlan {{ item.value.vlan }} ip address {{ item.value.ip }}
+  with_dict:
+    - "{{ node[inventory_hostname].routing.svi }}"
+
+- name: Deploy VLAN and SVI configurations
+  nclu:
+    commit: true
+    description: "Deploy VLAN and SVI configurations"
+    template: |
+      add vlan {{ item.value.vlan }} ip address {{ item.value.ip }}
+      net add bridge bridge ports {{ item.value.ports }}
+  with_dict:
+    - "{{ node[inventory_hostname].routing.svi }}"
