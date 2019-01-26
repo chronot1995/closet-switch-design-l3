@@ -22,6 +22,12 @@ iface {{interface}}
 {% endfor %}
 {% endif -%}
 
+auto bridge
+iface bridge
+    bridge-ports swp7
+    bridge-vids 100
+    bridge-vlan-aware yes
+
 {% if node[inventory_hostname].switching.interface is not none %}
 {% for interface in node[inventory_hostname]["switching"]["interface"] %}
 auto {{interface}}
