@@ -22,10 +22,8 @@ iface {{interface}}
 {% endfor %}
 {% endif -%}
 
-{% if node[inventory_hostname].switching.interface is not none %}
 {% for interface in node[inventory_hostname]["switching"]["interface"] %}
 auto {{interface}}
 iface {{interface}}
    bridge-access {{ node[inventory_hostname]["switching"][interface].vlan }}
 {% endfor %}
-{% endif -%}
