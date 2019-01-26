@@ -7,8 +7,8 @@ node:
         underlay:
           external:
             peers:
-              - swp11
-              - swp12
+              - swp1
+              - swp2
       svi:
         vlan100:
           ip: 10.11.11.1/24
@@ -21,8 +21,8 @@ node:
         underlay:
           external:
             peers:
-              - swp21
-              - swp22
+              - swp1
+              - swp2
       svi:
         vlan100:
           ip: 10.22.22.1/24
@@ -35,8 +35,8 @@ node:
         underlay:
           external:
             peers:
-              - swp31
-              - swp32
+              - swp1
+              - swp2
       svi:
         vlan100:
           ip: 10.33.33.1/24

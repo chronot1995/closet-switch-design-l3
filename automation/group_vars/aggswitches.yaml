@@ -7,8 +7,8 @@ node:
         underlay:
           external:
             peers:
-              - swp40
-              - swp41
+              - swp20
+              - swp21
           internal:
             peers:
   agg-switch01:
@@ -19,14 +19,14 @@ node:
         underlay:
           external:
             peers:
-              - swp11
-              - swp22
-              - swp33
-              - swp40
-          internal:
-            peers:
               - swp1
               - swp2
+              - swp3
+              - swp20
+          internal:
+            peers:
+              - swp10
+              - swp11
   agg-switch02:
     routing:
       lo: 10.4.4.2/32
@@ -36,10 +36,10 @@ node:
           external:
             peers:
               - swp11
-              - swp22
-              - swp33
-              - swp40
+              - swp2
+              - swp3
+              - swp20
           internal:
             peers:
-              - swp1
-              - swp2
+              - swp10
+              - swp11
